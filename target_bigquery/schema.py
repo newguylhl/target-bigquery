@@ -5,8 +5,10 @@ from google.cloud.bigquery import SchemaField
 
 JSON_SCHEMA_LITERALS = {"boolean", "number", "integer", "string"}
 METADATA_FIELDS = {
-    "_time_extracted": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"},
-    "_time_loaded": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"}
+    "_sdc_extracted_at": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"},
+    "_sdc_batched_at": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"},
+    "_sdc_received_at": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"},
+    "_sdc_sequence": {"type": ["null", "integer"], "format": "integer", "bq_type": "integer"},
 }
 
 

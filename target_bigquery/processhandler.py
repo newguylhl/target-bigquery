@@ -1,4 +1,5 @@
 import json
+import time
 import uuid
 from datetime import datetime
 from tempfile import TemporaryFile
@@ -103,9 +104,11 @@ class LoadJobProcessHandler(BaseProcessHandler):
             validate(msg.record, schema)
 
         if self.add_metadata_columns:
-            msg.record["_time_extracted"] = msg.time_extracted.isoformat() \
+            msg.record["_sdc_extracted_at"] = msg.time_extracted.isoformat() \
                 if msg.time_extracted else datetime.utcnow().isoformat()
-            msg.record["_time_loaded"] = datetime.utcnow().isoformat()
+            msg.record["_sdc_received_at"] = datetime.utcnow().isoformat()
+            msg.record["_sdc_sequence"] = int(time.time_ns())
+
 
         new_rec = filter_by_schema(schema, msg.record)
 
