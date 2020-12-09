@@ -11,7 +11,7 @@ setup(
     classifiers=["Programming Language :: Python :: 3 :: Only"],
     packages=["target_bigquery"],
     install_requires=[
-        "singer-python==5.9.0",
+        "singer-python==5.9.1",
         "google-cloud==0.34.0",
         "google-cloud-bigquery==1.25.0",
     ],
