@@ -3,7 +3,7 @@ import re
 # import logging
 from google.cloud.bigquery import SchemaField
 
-JSON_SCHEMA_LITERALS = {"boolean", "number", "integer", "string"}
+JSON_SCHEMA_LITERALS = {"boolean", "number", "integer", "string", "numeric"}
 METADATA_FIELDS = {
     "_sdc_extracted_at": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"},
     "_sdc_batched_at": {"type": ["null", "string"], "format": "date-time", "bq_type": "timestamp"},
