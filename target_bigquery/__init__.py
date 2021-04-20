@@ -46,6 +46,7 @@ def main():
     if config.get("replication_method", "append").lower() == "truncate":
         truncate = True
 
+    update_fields = config.get("update_fields", False)
     table_prefix = config.get("table_prefix", "")
     table_suffix = config.get("table_suffix", "")
     location = config.get("location", "US")
@@ -83,6 +84,7 @@ def main():
             location=location,
             truncate=truncate,
             validate_records=validate_records,
+            update_fields=update_fields,
             table_prefix=table_prefix,
             table_suffix=table_suffix,
             add_metadata_columns=add_metadata_columns,

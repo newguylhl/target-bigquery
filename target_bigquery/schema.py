@@ -168,7 +168,7 @@ def define_schema(field, name, required_fields=None):
         else:
             schema_type = field_type
     elif field_type == "number":
-        schema_type = "FLOAT"
+        schema_type = "bignumeric"
     else:
         schema_type = field_type
 
